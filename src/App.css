@@ -40,6 +40,8 @@ body {
   height: 300px;
   background-color: #c8e6c9;
   margin: 5px;
+  display: flex;
+  vertical-align: bottom;
 }
 
 .inventory .container {
@@ -52,8 +54,12 @@ body {
 }
 
 .flower {
+  margin-left: 50px;
+  margin-top: 90px;
   width: 100px;
   height: 100px;
+  vertical-align: bottom;
+  
 }
 
 form {

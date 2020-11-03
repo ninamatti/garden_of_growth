@@ -13,8 +13,10 @@ const Garden = () => {
     const [stageImage, setStage] = useState(null);
     const [clicked, toggleClicked] = useState(false);
     const [stageCounter, setCounter] = useState(0);
-
     
+    const [balance, changeBalance] = useState(0);
+    const [valueAtStage, setValues] = useState([0, 10, 20, 50, 2]);
+
  
     useEffect(() => { 
         console.log('useeffect was run', 'stageCounter status: ', stageCounter);
@@ -87,11 +89,11 @@ const Garden = () => {
   )
 }
 
-const mapStateToProps = (state) => {
-    return {
-        garden: state.garden.gardenPlots
-    }
-}
+// const mapStateToProps = (state) => {
+//     return {
+//         garden: state.garden.gardenPlots
+//     }
+// }
 
 export default Garden;
 
