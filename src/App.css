@@ -1,17 +1,7 @@
 .App {
-  text-align: center;
+  text-align: left;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
 
 .App-header {
   background-color: #282c34;
@@ -28,11 +18,31 @@
   color: #61dafb;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.garden {
+  margin-top: 100px;
+}
+
+.farm-plot {
+  padding: 20px;
+  background-color: #66bb6a;
+}
+
+.single-plot {
+  height: 300px;
+  background-color: #c8e6c9;
+  margin: 5px;
+}
+
+.inventory .container {
+  padding: 30px;
+  background-color: rgb(241, 241, 241);
+}
+.inventory-slot {
+  margin: 5px;
+  background-color: #66bb6a; 
+}
+
+.flower {
+  width: 100px;
+  height: 100px;
 }

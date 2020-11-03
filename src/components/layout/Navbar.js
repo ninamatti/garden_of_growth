@@ -5,7 +5,7 @@ import SignedOutLinks from './SignedOutLinks';
 
 const Navbar = () => {
   return (
-    <nav className="nav-wrapper grey darken-3">
+    <nav className="nav-wrapper green darken-4">
           <div className="container">
               <Link to='/' className="brand-logo">Garden of Growth</Link>
               <SignedInLinks />
