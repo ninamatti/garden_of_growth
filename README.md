@@ -1,6 +1,52 @@
 # Getting Started with Create React App
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app) and created during my time at 
+Code Chrysalis.
+
+
+---
+
+## Table of Contents
+
+- [Getting Started](#getting-started)
+- [Features at a Glance](#features-at-a-glance)
+  - [Planting a new Flower](#planting-a-new-flower)
+  - [Road Map](#road-map)
+ 
+
+## Getting Started
+
+This App is still in the early development stages, but if you want to have a look, you can check it out at:
+
+
+
+
+
+
+## Features at a Glance
+
+### Planting a new Flower
+
+> You can find detailed documentation about drawing [here][drawing-docs].
+
+The most basic operation *Zircon* supports is `draw`ing. You can draw individual `Tile`s or `TileGraphics` objects on your `TileGrid`. a `TileGraphics` object is composed of `Tile`s. This is a powerful tool and you can implement more complex features using simple `draw` operations. In fact the component system is implemented on top of drawing, layering and input handling features.
+
+![Modifiers](images/gifs/modifiers.gif)
+
+
+
+
+
+## Road Map
+
+Here are some features which are either under way or planned:
+
+
+- [ ] [Floating Components](https://github.com/Hexworks/zircon/issues/23)
+
+
+If you'd like to give any of these a shot feel free to *contribute*.
+
 
 ## Available Scripts
 
@@ -45,26 +91,3 @@ You can learn more in the [Create React App documentation](https://facebook.gith
 
 To learn React, check out the [React documentation](https://reactjs.org/).
 
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `yarn build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
