@@ -1,4 +1,6 @@
 import React, { useState } from 'react';
+import { useHistory } from 'react-router-dom'
+import firebase from '../../config/firebaseConfig'
 
 
 const SignUp = () => {
@@ -6,6 +8,9 @@ const SignUp = () => {
     const [password, setPassword] = useState('');
     const [firstName, setFirstName] = useState('');
     const [lastName, setLastName] = useState('');
+    const [error, setError] = useState(null);
+
+    const history = useHistory();
     
     function handleChange(e) {
         if(e.target.id==="email") {
@@ -27,13 +32,47 @@ const SignUp = () => {
 
     function handleSubmit(e) {
         e.preventDefault();
-        console.log(email, password, firstName, lastName);
+        // addUser();
+        // const {email, username, password} = this.state;
+        firebase
+            .auth()
+	        .createUserWithEmailAndPassword(email, password)
+	        .then(() => {
+                const user = firebase.auth().currentUser;
+                console.log('new user: ', user);
+	            user
+	                .updateProfile({displayName: firstName})
+		            .then(() => {
+		                    history.push('/');
+		                })
+		            .catch(error => {
+		                setError({error});
+		            });
+                })
+                .catch(error => {
+                    setError({error});
+                });
     }
+
+    // function addUser() {
+    //     db.collection("User").doc(firstName + ' ' + lastName).set({
+    //         email: email,
+    //         password: password,
+    //         firstName: firstName,
+    //         lastName: lastName
+    //     })
+    //     .then(function() {
+    //         console.log("Document successfully written!");
+    //     })
+    //     .catch(function(error) {
+    //         console.error("Error writing document: ", error);
+    //     });
+    // }
 
     return (
         <div className="container">
-            <form onSubmit={handleSubmit} className="white">
-                <h5 className="grey-text text-darken-3">Sign In</h5>
+            <form onSubmit={handleSubmit} className="form white">
+                <h5 className="grey-text text-darken-3">Sign Up</h5>
                 <div className="input-field">
                     <label htmlFor="email">Email</label>
                     <input type="email" id="email" onChange={handleChange} />
@@ -51,7 +90,7 @@ const SignUp = () => {
                     <input type="text" id="lastName" onChange={handleChange} />
                 </div>
                 <div className="input-field">
-                    <button className="btn green lighten-1 z-depth-0">Log In</button>
+                    <button className="btn green lighten-1 z-depth-0">Sign Up</button>
                 </div>
             </form>
         </div>

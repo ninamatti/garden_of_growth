@@ -1,11 +1,15 @@
 import React, { useState } from 'react';
-
+import firebase from '../../config/firebaseConfig'
+import { useHistory } from 'react-router-dom'
 
 const SignIn = () => {
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
+    const [error, setError] = useState(null);
 
-    
+    const history = useHistory();
+
+
     function handleChange(e) {
         if(e.target.id==="email") {
             setEmail(e.target.value);
@@ -20,12 +24,20 @@ const SignIn = () => {
 
     function handleSubmit(e) {
         e.preventDefault();
-        console.log(email, password);
+        firebase
+            .auth()
+            .signInWithEmailAndPassword(email, password)
+            .then(user => {
+                history.push('/');
+            })
+            .catch(error => {
+                setError({error});
+            });
     }
 
     return (
-        <div className="container">
-            <form onSubmit={handleSubmit} className="white">
+        <div className="container form-container">
+            <form onSubmit={handleSubmit} className="form white">
                 <h5 className="grey-text text-darken-3">Sign In</h5>
                 <div className="input-field">
                     <label htmlFor="email">Email</label>
