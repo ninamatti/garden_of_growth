@@ -9,7 +9,7 @@ import SunflowerStage4 from './imggrowth/sunflower4.png';
 
 
 const Garden = () => {
-    const [stages, setStages] = useState(['', SunflowerStage1, SunflowerStage2, SunflowerStage3, SunflowerStage4])
+    const [stages, setStages] = useState([null, SunflowerStage1, SunflowerStage2, SunflowerStage3, SunflowerStage4])
     const [stageImage, setStage] = useState(null);
     const [clicked, toggleClicked] = useState(false);
     const [stageCounter, setCounter] = useState(0);
