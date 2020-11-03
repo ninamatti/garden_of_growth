@@ -1,7 +1,10 @@
 import React, { useState } from 'react';
 import { useHistory } from 'react-router-dom'
-import firebase from '../../config/firebaseConfig'
+import app from '../../config/firebaseConfig'
+import { db } from '../../config/firebaseConfig'
 
+// const db = firebase;
+console.log('db: ', db);
 
 const SignUp = () => {
     const [email, setEmail] = useState('');
@@ -32,13 +35,13 @@ const SignUp = () => {
 
     function handleSubmit(e) {
         e.preventDefault();
-        // addUser();
+        
         // const {email, username, password} = this.state;
-        firebase
+        app
             .auth()
 	        .createUserWithEmailAndPassword(email, password)
 	        .then(() => {
-                const user = firebase.auth().currentUser;
+                const user = app.auth().currentUser;
                 console.log('new user: ', user);
 	            user
 	                .updateProfile({displayName: firstName})
@@ -52,22 +55,24 @@ const SignUp = () => {
                 .catch(error => {
                     setError({error});
                 });
+            console.log('db: ', db);
+            addUser();
     }
 
-    // function addUser() {
-    //     db.collection("User").doc(firstName + ' ' + lastName).set({
-    //         email: email,
-    //         password: password,
-    //         firstName: firstName,
-    //         lastName: lastName
-    //     })
-    //     .then(function() {
-    //         console.log("Document successfully written!");
-    //     })
-    //     .catch(function(error) {
-    //         console.error("Error writing document: ", error);
-    //     });
-    // }
+    function addUser() {
+        db.collection("User").doc(firstName + ' ' + lastName).set({
+            email: email,
+            password: password,
+            firstName: firstName,
+            lastName: lastName
+        })
+        .then(function() {
+            console.log("Document successfully written!");
+        })
+        .catch(function(error) {
+            console.error("Error writing document: ", error);
+        });
+    }
 
     return (
         <div className="container">

@@ -1,3 +1,12 @@
+html {
+  min-height: 100%;
+}
+
+body {
+  min-height: 100%;
+  background-color: rgb(198, 255, 198);
+}
+
 .App {
   text-align: left;
 }
@@ -45,4 +54,13 @@
 .flower {
   width: 100px;
   height: 100px;
+}
+
+form {
+  padding: 20px;
+  margin-top: 60px;
+}
+
+form button, form h5 {
+  margin: 20px 0;
 }
