@@ -8,49 +8,30 @@ Code Chrysalis as a timed project, completed within 3 days.
 
 ## Table of Contents
 
-- [Getting Started](#getting-started)
+
 - [Motivation](#motivation)
 - [Features at a Glance](#features-at-a-glance)
   - [Planting a new Flower](#planting-a-new-flower)
   - [User Authentication](#user-authentication)
- 
+- [Getting Started](#getting-started)
 
 ## Motivation
 
-
+I love the idea of gamification to motivate Users to do tasks that benefit them, but are hard to get around to. Using a flower-planting mechanism has the goal to give a user a digital reward for completing a hard or annoying task. I plan to insert this mechanic into a skill tracker app in the future.
 
 ## Deployment
 
 This App is still in the early development stages, but if you want to have a look, you can check it out at:
-
-
+https://garden-of-growth.web.app/
 
 ## Features at a Glance
 
 ### Planting a new Flower
 
-> You can find detailed documentation about drawing [here][drawing-docs].
-
-The most basic operation *Zircon* supports is `draw`ing. You can draw individual `Tile`s or `TileGraphics` objects on your `TileGrid`. a `TileGraphics` object is composed of `Tile`s. This is a powerful tool and you can implement more complex features using simple `draw` operations. In fact the component system is implemented on top of drawing, layering and input handling features.
-
-![Modifiers](images/gifs/modifiers.gif)
+### User Authentication
 
 
-
-
-
-## Road Map
-
-Here are some features which are either under way or planned:
-
-
-- [ ] [Floating Components](https://github.com/Hexworks/zircon/issues/23)
-
-
-If you'd like to give any of these a shot feel free to *contribute*.
-
-
-## Available Scripts
+## Getting started
 
 In the project directory, you can run:
 
